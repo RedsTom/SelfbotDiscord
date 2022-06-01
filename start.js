@@ -32,6 +32,7 @@ client.on('ready', async () => {
 });
 
 client.on('message', async message => {
+    console.log(message.content, message.author.username);
     if (message.author.id != client.user.id) return;
     all_helps(client, message, process);
     PREFIX_CRYPTO(client, message, process);
