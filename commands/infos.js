@@ -5,25 +5,19 @@
 ** all info's commands, like the help, the invite, etc...
 */
 
-const { Client, MessageEmbed, WebEmbed } = require('discord.js-selfbot-v13');
-const client = new Client(); 
-require('dotenv').config(); 
-const BetterMarkdown = require('discord-bettermarkdown');
-const markdown = new BetterMarkdown();
+import dotenv from 'dotenv'
+dotenv.config()
 
-async function info_user(client, message, process)
-{
+/* eslint-disable */
+async function infoUser (client, message, process) {
 
 }
 
-async function info_serv(client, message, process)
-{
+/* eslint-disable */
+async function infoServ (client, message, process) {
 
 }
 
-async function PREFIX_INFOS(client, message, process)
-{
+export default async function PREFIX_INFOS (client, message, process) {
 
 }
-
-module.exports = { PREFIX_INFOS };

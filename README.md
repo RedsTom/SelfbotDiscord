@@ -88,4 +88,4 @@ Once this is done your **token** is copied into your __paper-press__.
 | <img src="assets_for_readme/nice.png" width="16" vertical-align="middle"/> Info_serv               |                           Give some information to a guild                           |   <font style="color: green; font-size: 16px;">🔨</font>    |
 
 ###### If you have some idea send me a message : MisTrale.js#9999
-<img src="assets_for_readme/banner_selfbot.png" widht="80px" height="80px">
+<img src="assets_for_readme/banner_selfbot.png" widht="25px" height="25px">

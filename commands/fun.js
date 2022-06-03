@@ -5,60 +5,69 @@
 ** all fun's commands, like the ping, etc...
 */
 
-const { default: axios } = require('axios');
-const BetterMarkdown = require('discord-bettermarkdown');
-const markdown = new BetterMarkdown();
-const { Client, MessageEmbed, WebEmbed} = require('discord.js-selfbot-v13');
-const client = new Client(); 
-require('dotenv').config(); 
+import axios from 'axios'
+import dotoenv from 'dotenv'
+dotoenv.config()
 
-async function meme(client, message, process)
-{
-    axios.get("https://some-random-api.ml/meme").then(reponse => {
-        message.channel.send(reponse.data.image);  
-    });
+async function meme (client, message, process) {
+  axios.get('https://some-random-api.ml/meme').then(reponse => {
+    message.channel.send(reponse.data.image)
+  })
 }
 
-async function dog(client, message, process)
-{
-    axios.get("https://api.thedogapi.com/v1/images/search").then(reponse => {
-        message.channel.send(reponse.data[0].url);
-    });
+async function dog (client, message, process) {
+  axios.get('https://api.thedogapi.com/v1/images/search').then(reponse => {
+    message.channel.send(reponse.data[0].url)
+  })
 }
 
-async function cat(client, message, process)
-{
-    axios.get("https://api.thecatapi.com/v1/images/search").then(reponse => {
-        message.channel.send(reponse.data[0].url);
-    });
+async function cat (client, message, process) {
+  axios.get('https://api.thecatapi.com/v1/images/search').then(reponse => {
+    message.channel.send(reponse.data[0].url)
+  })
 }
 
-async function pic(client, message, process)
-{
-    let user = message.mentions.users.first();
+async function pic (client, message, process) {
+  const user = message.mentions.users.first()
 
-    await message.delete()
+  await message.delete()
 
-    user ? await message.channel.send(user.displayAvatarURL()) : await message.channel.send("I can't find this user.");
+  user ? await message.channel.send(user.displayAvatarURL()) : await message.channel.send("I can't find this user.")
 }
 
-async function ping(client, message, process)
-{
-    let message_test_ping = await message.channel.send("Ping test...");
-    await message_test_ping.edit(`✅ Latence: ${message_test_ping.createdTimestamp - message.createdTimestamp}ms.`);
+async function ping (client, message, process) {
+  const messageTestPing = await message.channel.send('Ping test...')
+  await messageTestPing.edit(`✅ Latence: ${messageTestPing.createdTimestamp - message.createdTimestamp}ms.`)
 }
 
-async function PREFIX_FUN(client, message, process)
-{
-    if (message.content.startsWith(`${process.env.PREFIX_FUN}`)) {
-        let fun_flag = message.content.replace(`${process.env.PREFIX_FUN}`, "");
+const tests = [
+  {
+    test: a => a === 'ping',
+    run: ping
+  },
+  {
+    test: a => a.startsWith('pic'),
+    run: pic
+  },
+  {
+    test: a => a === 'cat',
+    run: cat
+  },
+  {
+    test: a => a === 'dog',
+    run: dog
+  },
+  {
+    test: a => a === 'meme',
+    run: meme
+  }
+]
 
-        fun_flag == "ping" ? ( await message.delete(), ping(client, message, process) ): null
-        fun_flag.startsWith(`pic`) ? ( pic(client, message, process) ): null
-        fun_flag == "cat" ? ( await message.delete(), cat(client, message, process) ): null
-        fun_flag == "dog" ? ( await message.delete(), dog(client, message, process) ): null
-        fun_flag == "meme" ? ( await message.delete(), meme(client, message, process) ): null
-    }
+export default async function PREFIX_FUN (client, message, process) {
+  if (message.content.startsWith(`${process.env.PREFIX_FUN}`)) {
+    const funFlag = message.content.replace(`${process.env.PREFIX_FUN}`, '')
+
+    tests.filter(a => a.test(funFlag))
+      .forEach(a => a.run(client, message, process))
+  }
 }
-
-module.exports = { PREFIX_FUN };
