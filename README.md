@@ -1,5 +1,7 @@
+<p align="center"> 
+  <img src="assets_for_readme/selfbot.png" alt="selfbot.png" width="80px" height="80px">
+</p>
 <h1 align="center">
-    <img src="assets_for_readme/selfbot.png" alt="selfbot.png" width="80px" height="80px">
   👑 Selfbot-Discord !
 </h1>
 
@@ -20,7 +22,7 @@ $ sudo ./start.sh
 
 ## 🛡️ TOS | Privacy Policy
 
->> Small reminder, the use of a selfbot is **prohibited** by __discord__ themselves.
+> Small reminder, the use of a selfbot is **prohibited** by __discord__ themselves.
 
 The question regarding "self bots" has come up here and there, and we'd like to make our stance clear:
 
