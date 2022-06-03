@@ -1,20 +1,35 @@
-# 👑 Selfbot-Discord !
+<h1 align="center">
+    <img src="assets_for_readme/selfbot.png" alt="selfbot.png" width="80px" height="80px">
+  👑 Selfbot-Discord !
+</h1>
 
-### 📚 Préqrequis :
+## ⚡️ Download | Install 
 
-[node.js](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-fr)
+> [node.js](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-fr) **(v16.14.0 or higher)**
 
-# 🛡️ TOS
-Petit rappel, l'utilisation d'un selfbot est **interdit** par __discord__ eux-même.
+```bash
+# Clone this repository
+$ git clone https://github.com/CatalanNathan/SelfbotDiscord
 
-La question concernant les « self-bots » a été soulevée ici et là, et nous aimerions clarifier notre position :
+# Go into the repository
+$ cd SelfbotDiscord
 
-L'API de Discord fournit un type distinct de compte utilisateur dédié à l'automatisation, appelé compte bot. Les comptes de bot peuvent être créés via la page des applications et sont authentifiés à l'aide d'un jeton (plutôt qu'un nom d'utilisateur et un mot de passe). Contrairement au flux OAuth2 normal, les comptes de bot ont un accès complet à toutes les routes API sans utiliser de jetons de support et peuvent se connecter à la passerelle en temps réel. L'automatisation des comptes d'utilisateurs normaux (généralement appelés "self-bots") en dehors de l'API OAuth2/bot est interdite et peut entraîner la fermeture du compte s'il est détecté.
-Pour lire la suite [cliquez ici](https://support.discord.com/hc/en-us/articles/115002192352-Automated-user-accounts-self-bots-)
+# Install the dependencies and start the selfbot
+$ sudo ./start.sh
+```
 
-# Installation
+## 🛡️ TOS | Privacy Policy
 
-- Allez dans le fichier **.env** et compléter les informations demandé, pour avoir votre token connécté vous à [discord.com](https://discord.com/) et collé ce code dans la console
+>> Small reminder, the use of a selfbot is **prohibited** by __discord__ themselves.
+
+The question regarding "self bots" has come up here and there, and we'd like to make our stance clear:
+
+Discord's API provides a separate type of user account dedicated to automation, called a bot account. Bot accounts can be created through the applications page, and are authenticated using a token (rather than a username and password). Unlike the normal OAuth2 flow, bot accounts have full access to all API routes without using bearer tokens, and can connect to the Real Time Gateway. Automating normal user accounts (generally called "self-bots") outside of the OAuth2/bot API is forbidden, and can result in an account termination if found.
+To read more [click here](https://support.discord.com/hc/en-us/articles/115002192352-Automated-user-accounts-self-bots-)
+
+## 📝 Utilisation | Usage
+
+- Go to the file **.env** and complete the information requested, to have your token connected to [discord.com](https://discord.com/) and paste this code into the console
 
 ```js
 window.webpackChunkdiscord_app.push([
@@ -36,13 +51,17 @@ window.webpackChunkdiscord_app.push([
 console.log('%cWorked!', 'font-size: 50px');
 ```
 
-Une fois cela fait votre TOKEN est copier dans votre __presse-papier__
+Once this is done your **token** is copied into your __paper-press__.
 
-# ✔️ Lancer le bot !
+## ✔️ Start
 
-Si vous êtes sur **linux** faite cette commande dans le terminal : **chmod a+x start.sh**, puis **./start.sh**
+1. Linux :
+  + `$ chmod a+x start.sh`
+  + `$ ./start.sh`
 
-#### Il vous reste plus qu'a faire un help pour voir toute les commandes !
+2. Windows : (Currently unavailable)
+
+#### You just have to do a "+help" to see all the orders!
 
 | Type                                                                                     |                                  Description                                   |                            State                            |
 |------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------:|:-----------------------------------------------------------:|
@@ -67,3 +86,4 @@ Si vous êtes sur **linux** faite cette commande dans le terminal : **chmod a+x 
 | <img src="assets_for_readme/nice.png" width="16" vertical-align="middle"/> Info_serv               |                           Give some information to a guild                           |   <font style="color: green; font-size: 16px;">🔨</font>    |
 
 ###### If you have some idea send me a message : MisTrale.js#9999
+<img src="assets_for_readme/banner_selfbot.png" widht="80px" height="80px">
